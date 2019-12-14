@@ -7,8 +7,8 @@ const _bugRepository = mongoose.model("Bug", Bug);
 
 class CleanupService {
   async cleanupAsync() {
-    await _noteRepository.deleteMany({ creator: 'D$' })
-    await _bugRepository.deleteMany({ creator: 'D$' })
+    await _noteRepository.deleteMany({ reportedBy: 'D$' })
+    await _bugRepository.deleteMany({ reportedBy: 'D$' })
     return { message: "Deleted all test junk!" }
   }
 }
