@@ -44,7 +44,7 @@ server.use("/api/values", new ValuesController().router);
 
 // NOTE DO NOT touch! This is for testing only
 import cleanupService from "./utils/CleanupService";
-server.get('/cleanup', async (req, res, next) => {
+server.delete('/cleanup', async (req, res, next) => {
   try {
     let data = await cleanupService.cleanupAsync()
     res.send(data)
