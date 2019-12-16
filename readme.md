@@ -57,8 +57,7 @@ var bug = new Schema({
     closed: { type: Boolean, required: true, default: false },
     description: { type: String, required: true },
     title: { type: String, required: true },
-    creator: { type: String, required: true } //The provided name for who reported the bug
-    user: { type: String, required: true }, 
+    reportedBy: { type: String, required: true }, //The provided name for who reported the bug
     closedDate: { type: Date}
 }, { timestamps: true })
 ```
@@ -68,8 +67,7 @@ var bug = new Schema({
 var note = new Schema({
     content: { type: String, required: true },
     bug: { type: ObjectId, ref: 'Bug' required: true },
-    creator: { type: String, required: true } //The provided name for who made the note
-    user: { type: String, required: true },
+    reportedBy: { type: String, required: true }, //The provided name for who made the note
     flagged: { type: String, enum: ["pending", "completed", "rejected"] }
 }, { timestamps: true })
 ```
