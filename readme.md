@@ -78,7 +78,7 @@ var note = new Schema({
 
 Get
 
-`/bugs`: returns a list of bugs for the user
+`/bugs`: returns a list of all the bugs
 
 `/bugs/:id`: returns a single bug with all it's data
 
@@ -88,7 +88,7 @@ Post
 
 `/bugs`: Creates a new bug
 
-`/bugs/:id/notes`: Adds a new note to the bug. *This can only be done if bug is open*
+`/notes`: Adds a new note to the bug.
 
 Put 
 
@@ -96,7 +96,7 @@ Put
 
 `/bugs/:id`: Edits bug
 
-`/bugs/:id/notes/:id`: Edits note.
+`/bugs/:id/notes/:id`: Edits note. (not required)
 
 Delete
 
