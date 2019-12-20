@@ -74,7 +74,7 @@ var note = new Schema({
 
 
 ### Endpoints
-> baseUrl: `'https://bcw-sandbox.herokuapp.com/api/YOURNAME'`
+> baseUrl: `'https://localhost:3000/api'`
 
 Get
 
