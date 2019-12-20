@@ -1,6 +1,6 @@
 # Bug-Report
 
-Welcome to the Bug-Report! 
+Welcome to the Bug-Report!
 
 You have been tasked with creating a tool to better report bugs for your team. The goal being, to better track bugs in your application, as well as the process taken to solve them.
 
@@ -10,7 +10,7 @@ Users can also add notes to the bug report providing detailed steps towards the 
 
 Once a bug has been closed, no further editing is allowed.
 
-Here are some mock-ups from the client
+Here are some mock-ups from the client.
 <hr>
 
 ### Home View:
@@ -59,7 +59,7 @@ var bug = new Schema({
     title: { type: String, required: true },
     reportedBy: { type: String, required: true }, //The provided name for who reported the bug
     closedDate: { type: Date}
-}, { timestamps: true })
+}, { timestamps: true, toJSON: { virtuals: true } })
 ```
 
 ### Note Schema
@@ -69,7 +69,7 @@ var note = new Schema({
     bug: { type: ObjectId, ref: 'Bug' required: true },
     reportedBy: { type: String, required: true }, //The provided name for who made the note
     flagged: { type: String, enum: ["pending", "completed", "rejected"] }
-}, { timestamps: true })
+}, { timestamps: true, toJSON: { virtuals: true } })
 ```
 
 
